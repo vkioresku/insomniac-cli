@@ -1,0 +1,7 @@
+*.tgz
+lib
+__temp__
+node_modules
+.DS_Store
+.history
+coverage

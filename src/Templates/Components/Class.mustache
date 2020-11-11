@@ -1,0 +1,32 @@
+import React from "react";
+
+{{#hasStyle}}
+import { Container } from "./styled";
+{{/hasStyle}}
+
+{{#hasType}}
+import { {{interfaceName}} } from "./{{upperFileName}}";
+{{/hasType}}
+
+export class {{upperFileName}} extends React.Component{{#hasType}}<{{interfaceName}}>{{/hasType}} {
+    constructor({{#hasType}}props{{/hasType}}) {
+        super({{#hasType}}props{{/hasType}});
+
+        this.state = {};
+    }
+
+    render() {
+        return (
+            {{#hasStyle}}
+            <Container>
+                {{upperFileName}} Page
+            </Container>
+            {{/hasStyle}}
+            {{^hasStyle}}
+            <section>
+                {{upperFileName}} Page
+            </section>
+            {{/hasStyle}}
+        );
+    }
+}

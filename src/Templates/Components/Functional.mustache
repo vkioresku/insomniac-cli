@@ -1,0 +1,38 @@
+import React from "react";
+{{#isPage}}
+import { NextPage } from "next";
+{{/isPage}}
+
+{{^isPage}}
+    {{#hasStyle}}
+import { Container } from "./styled";
+    {{/hasStyle}}
+{{/isPage}}
+
+{{^isPage}}
+    {{#hasType}}
+import { {{interfaceName}} } from "./{{upperFileName}}";
+    {{/hasType}}
+{{/isPage}}
+
+{{#isPage}}
+const {{upperFileName}}: NextPage = () => {
+{{/isPage}}
+{{^isPage}}
+const {{upperFileName}}: React.FunctionComponent{{#hasType}}<{{interfaceName}}>{{/hasType}} = ({{#hasType}}props{{/hasType}}) => {
+{{/isPage}}
+    return (
+        {{#hasStyle}}
+        <Container>
+            {{upperFileName}} Page
+        </Container>
+        {{/hasStyle}}
+        {{^hasStyle}}
+        <section>
+            {{upperFileName}} Page
+        </section>
+        {{/hasStyle}}
+    );
+};
+
+export default {{upperFileName}};

@@ -19,7 +19,7 @@ import { {{interfaceName}} } from "./{{upperFileName}}";
 const {{upperFileName}}: NextPage = () => {
 {{/isPage}}
 {{^isPage}}
-const {{upperFileName}}: React.FunctionComponent{{#hasType}}<{{interfaceName}}>{{/hasType}} = ({{#hasType}}props{{/hasType}}) => {
+export const {{upperFileName}}: React.FunctionComponent{{#hasType}}<{{interfaceName}}>{{/hasType}} = ({{#hasType}}props{{/hasType}}) => {
 {{/isPage}}
     return (
         {{#hasStyle}}
@@ -35,4 +35,6 @@ const {{upperFileName}}: React.FunctionComponent{{#hasType}}<{{interfaceName}}>{
     );
 };
 
+{{#isPage}}
 export default {{upperFileName}};
+{{/isPage}}

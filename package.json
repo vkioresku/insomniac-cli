@@ -1,6 +1,6 @@
 {
   "name": "@vkioresku/insomniac-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI to easily create React components with files such as styles and type declarations",
   "main": "src/index.js",
   "bin": {
@@ -28,7 +28,8 @@
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3",
     "log-symbols": "^4.0.0",
-    "mustache": "^4.0.1"
+    "mustache": "^4.0.1",
+    "tslib": "^2.0.3"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",

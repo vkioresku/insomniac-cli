@@ -1,7 +1,7 @@
 import { paths } from '../../../paths';
 import { createFuncComponentParams } from '../params';
 import { getTemplate, createFile, addToIndex, writeFile } from '../operations';
-import { createInterface, createStyle, addRoute } from '.';
+import { createInterface, createStyle } from '.';
 
 import { Common } from '../../../typings';
 
@@ -15,13 +15,6 @@ export const createFuncComponent = (options: Common.Answers): void => {
 
   if (isPage) {
     options.funcComponentDir = `${paths.pagesDir}/${lowerFileName}`;
-
-    const addRouteParams = {
-      routesDir: paths.routesDir,
-      routesTemplate: paths.templates.addRouteTemplate,
-    };
-
-    addRoute(options, addRouteParams);
   } else {
     options.funcComponentDir = `${paths.componentsDir}/${options.fileName}`;
 

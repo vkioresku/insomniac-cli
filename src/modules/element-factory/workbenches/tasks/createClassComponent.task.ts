@@ -1,7 +1,7 @@
 import { paths } from '../../../paths';
 import { createClassComponentParams } from '../params';
 import { getTemplate, addToIndex, createFile, writeFile } from '../operations';
-import { createInterface, createStyle, addRoute } from '.';
+import { createInterface, createStyle } from '.';
 
 import { Common } from '../../../typings';
 
@@ -12,16 +12,8 @@ export const createClassComponent = (options: Common.Answers): void => {
     componentTestTemplatePath,
   } = createClassComponentParams;
 
-  const { fileName, lowerFileName, hasTest } = options;
+  const { fileName, hasTest } = options;
 
-  options.classDir = `${paths.pagesDir}/${lowerFileName}`;
-
-  const addRouteParams = {
-    routesDir: paths.routesDir,
-    routesTemplate: paths.templates.addRouteTemplate,
-  };
-
-  addRoute(options, addRouteParams);
   options.classDir = `${paths.componentsDir}/${fileName}`;
 
   const addIndexParams: Common.AddIndex = {
